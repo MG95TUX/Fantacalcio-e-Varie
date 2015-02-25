@@ -1,0 +1,28 @@
+import java.util.scanner
+public class Champions{
+public static void main(string[] args]{
+System.out.println("MG95TUX - programma rilasciato sotto GPL 2.0");
+private String squadra;
+private int posizione;
+private double valore;
+private int checkvalue;
+Scanner in = new Scanner(System.in);
+Champions array[] = new Champions[8];
+public Champions(String sq, int po, double va, int ch){
+squadra= sq;
+posizione =po;
+if ((posizione != 1) && (posizione !=2) throw new IllegalArgumentException();
+valore=va;
+checkvalue=ch;
+if ((checkvalue < 1) && (checkvalue > 4) throw new IllegalArgumentException();
+if (valore = 1) checkvalue = checkvalue + 1;
+}
+int i=0;
+while (i< 8){
+System.out.println("dammi la squadra N°" + i);
+String team= in.nextline();
+System.out.println("dimmi se la squadra N°" + i +" era 1 o 2"));
+int place;
+double value = math.random();
+System.out.println("dimmi in che girone la squadra N°" + i +" era (1 se a, 2 se b, 3 se c, 4 se b)"));
+int checkvalue;
