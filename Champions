@@ -1,67 +1,76 @@
+/*@author Matteo Guerra - MG95TUX
+  @license GNU GPL 2.0 
+*/
 import java.util.Scanner;
+import java.lang.Math;
 public class Champions{
-public static void main(String[] args){
-System.out.println("MG95TUX - programma rilasciato sotto GPL 2.0");
 private String squadra;
 private int posizione;
 private double valore;
 private int checkvalue;
-Scanner in = new Scanner(System.in);
-Champions array[] = new Champions[8];
+
 public Champions(String sq, int po, double va, int ch){
 squadra= sq;
 posizione =po;
 valore=va;
 checkvalue=ch;
 }
-public int getvalore(){return valore;}
-public int getsquadra(){return squadra;}
+public double getvalore(){return valore;}
+public String getsquadra(){return squadra;}
 public int getcheckvalue(){return checkvalue;}
-int i=0;
-while (i< 8){
-    System.out.println("dammi la squadra N°" + i);
-    String team= in.nextline();
-    System.out.println("dimmi se la squadra N°" + i +" era 1 o 2"));
-    int place= in.nextint();
-    if ((place != 1) && (place !=2)) throw new IllegalArgumentException();
-    double value = math.random();
-    System.out.println("dimmi in che girone la squadra N°" + i +" era (1 se a, 2 se b, 3 se c, 4 se b)"));
-    int check=in.nextint();
-    if ((check < 1) && (check > 4)) throw new IllegalArgumentException();
-    if (value = 1){ check = check + 1};
-    array[i] = new champions(team, place, value, check);
-    team =null;
-    place=null;
-    value=null;
-    check=null;
-    i++;
-    }
-while(int h< 8){
-  if array[h].getvalore < array[h+1].getvalore{
-     Champions temp = array[h+1];
-     array[h+1] = array[h];}
-     array[h] = temp;
-     h=0;}
-  else h++;}
-int f=0;
-while(int f< 4){
-   if array[f].getcheckvalue() = array[f+4].getcheckvalue(){
-       if(f+4==7){
-          Champions temp = array[f+4];
-          array[f+4] = array[4];
-          array[4] = temp;
-          f=0;}
-       else {
-         Champions temp = array[f+4];
-         array[f+4] = array[f+5];}
-         array[f+5] = temp;
-         h=0;}
-   else i++;
-}
-int g=0;
-while(int g< 4){
-System.out.println(array[g] + " vs " +  array[g+4]);
-g++;
-}}
 
+   public static void main(String[] args){
+   System.out.println("MG95TUX - programma rilasciato sotto GPL 2.0");
+   Scanner in = new Scanner(System.in);
+   Champions array[] = new Champions[8];
+   int i=0;
+   while (i< 8){
+       System.out.println("dammi la squadra N°" + i);
+       String team= in.nextLine();
+       System.out.println("dimmi se la squadra N°" + i +" era 1 o 2");
+       int place= in.nextInt();
+       if ((place != 1) && (place !=2)) throw new IllegalArgumentException();
+       double value = Math.random();
+       System.out.println("dimmi in che girone la squadra N°" + i +" era (1 se a, 2 se b, 3 se c, 4 se b)");
+       int check=in.nextInt();
+       if ((check < 1) && (check > 4)) throw new IllegalArgumentException();
+       if (value == 1){ check = check + 1;};
+       array[i] = new Champions(team, place, value, check);
+       team ="0";
+       place=0;
+       value=0;
+       check=0;
+       i++;
+       }
+   int h=0;
+   while(h< 8){
+     if (array[h].getvalore() < array[h+1].getvalore()){
+        Champions temp = array[h+1];
+        array[h+1] = array[h];
+        array[h] = temp;
+        h=0;}
+     else h++;};
+   int f=0;
+   while(f< 4){
+      if (array[f].getcheckvalue() == array[f+4].getcheckvalue()){
+          if(f+4==7){
+             Champions temp = array[f+4];
+             array[f+4] = array[4];
+             array[4] = temp;
+             f=0;}
+          else {
+            Champions temp = array[f+4];
+            array[f+4] = array[f+5];
+            array[f+5] = temp;
+            f=0;};}
+      else f++;
+   
+   int g=0;
+   while(g< 4){
+   System.out.println(array[g] + " vs " +  array[g+4]);
+   g++;
+   }
+}
+}
+}
  
