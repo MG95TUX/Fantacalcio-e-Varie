@@ -1,0 +1,17 @@
+public class Chelper{
+private String squadra;
+private int posizione;
+private double valore;
+private int checkvalue;
+Scanner in = new Scanner(System.in);
+Champions array[] = new Champions[8];
+public Chelper(String sq, int po, double va, int ch){
+squadra= sq;
+posizione =po;
+valore=va;
+checkvalue=ch;
+}
+public int getvalore(){return valore;}
+public int getsquadra(){return squadra;}
+public int getcheckvalue(){return checkvalue;}
+}
