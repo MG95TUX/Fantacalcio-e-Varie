@@ -3,6 +3,7 @@
 */
 import java.util.Scanner;
 import java.lang.Math;
+
 public class UEFAcups{
 private String squadra;
 private int posizione;
@@ -20,7 +21,7 @@ public String getsquadra(){return squadra;}
 public int getcheckvalue(){return checkvalue;}
 
    public static void main(String[] args){
-   System.out.println("Estrazioni Random per Europa League 1.0");
+   System.out.println("Estrazioni random per assegnazioni scontri diretti Champions League e Europa League");
    System.out.println("MG95TUX - programma rilasciato sotto GPL 2.0");
    Scanner in = new Scanner(System.in);
    UEFAcups array[] = new UEFAcups[8];
@@ -54,9 +55,10 @@ public int getcheckvalue(){return checkvalue;}
        check=0;
        z++;};
        p = i+z;
-       }
+       };
+                                         //System.out.println("acquisizione completata");
    int h=0;  // riordino Array Champions
-   while(h< 7){
+   while(h < 7){
      if (array[h].getvalore() < array[h+1].getvalore()){
         UEFAcups temp = array[h+1];
         array[h+1] = array[h];
@@ -64,13 +66,14 @@ public int getcheckvalue(){return checkvalue;}
         h=0;}
      else h++;};
    int w=0;  // riordino Array EL
-   while(w< 7){
-     if (a22ay[w].getvalore() < array[w+1].getvalore()){
+   while(w < 7){
+     if (a22ay[w].getvalore() < a22ay[w+1].getvalore()){
         UEFAcups temp = a22ay[w+1];
         a22ay[w+1] = a22ay[w];
         a22ay[w] = temp;
         w=0;}
      else w++;};
+                                          //System.out.println("riordino completato");
    int f=0; //controllo Checkvalue Champions
    while(f< 4){
      int tmp1=   array[f].getcheckvalue() ;
@@ -87,7 +90,7 @@ public int getcheckvalue(){return checkvalue;}
             array[f+5] = temp;
             f=0;};}
       else f++;
-   }
+   };
    int t=0; //controllo Checkvalue EL
    while(t< 4){
      int tmp1=   a22ay[t].getcheckvalue() ;
@@ -104,7 +107,8 @@ public int getcheckvalue(){return checkvalue;}
             a22ay[t+5] = temp;
             t=0;};}
       else t++;
-   }
+   };
+                                      //System.out.println("controllo check completato");
    int g=0; // stampa Risultati Champions
    System.out.println("Questi sono gli accoppiamenti di Champions:");
    while(g< 4){
@@ -112,14 +116,13 @@ public int getcheckvalue(){return checkvalue;}
    String temp2=   array[g+4].getsquadra() ;
    System.out.println(temp1 + " vs " +  temp2);
    g++;
-   }
+   };
    int b=0; // stampa Risultati Europa League
    System.out.println("Questi sono gli accoppiamenti di Europa League:");
    while(b< 4){
    String temp1=   a22ay[b].getsquadra() ;
    String temp2=   a22ay[b+4].getsquadra() ;
    System.out.println(temp1 + " vs " +  temp2);
-   b++;
-   }
+   b++;};
 }
 }    
