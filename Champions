@@ -20,6 +20,7 @@ public String getsquadra(){return squadra;}
 public int getcheckvalue(){return checkvalue;}
 
    public static void main(String[] args){
+   System.out.println("Estrazioni Random per Champions League 1.0");
    System.out.println("MG95TUX - programma rilasciato sotto GPL 2.0");
    Scanner in = new Scanner(System.in);
    Champions array[] = new Champions[8];
@@ -32,10 +33,10 @@ public int getcheckvalue(){return checkvalue;}
        int place= in.nextInt();
        if ((place != 1) && (place !=2)) throw new IllegalArgumentException();
        double value = Math.random();
-       System.out.println("dimmi in che girone " + team + " (squadra N°" + s +") era (1 se a, 2 se b, 3 se c, 4 se b)");
+       System.out.println("dimmi in che girone " + team + " (squadra N°" + s +") era (1 se a, 2 se b, 3 se c, 4 se d)");
        int check=in.nextInt();
        if ((check < 1) && (check > 4)) throw new IllegalArgumentException();
-       if (value == 1){ check = check + 1;};
+       if (place == 1){ value = value + 1;};           //evitare primi vs primi
        array[i] = new Champions(team, place, value, check);
        team =null;
        place=0;
@@ -67,7 +68,7 @@ public int getcheckvalue(){return checkvalue;}
             array[f+5] = temp;
             f=0;};}
       else f++;
-   
+   }
    int g=0;
    while(g< 4){
    String temp1=   array[g].getsquadra() ;
@@ -75,10 +76,6 @@ public int getcheckvalue(){return checkvalue;}
    System.out.println(temp1 + " vs " +  temp2);
    g++;
    }
-}
-}
-}
 
- 
-
-
+}
+}    
