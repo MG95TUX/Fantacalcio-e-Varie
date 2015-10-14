@@ -2,6 +2,7 @@
   @license GNU GPL 2.0 
 */
 import java.util.Scanner;
+
 import java.lang.Math;
 public class Gironi{
 String nome;
@@ -20,8 +21,20 @@ double numero;
       boolean flag = true;
           while (flag){
               Scanner s = new Scanner(System.in);
-              System.out.println("inserisci il numero di squadre qui:");
-              final int x = s.nextInt();
+              boolean gg= true;
+              int bbb=0;
+              while (gg != false){
+                try  {gg = true;
+                      System.out.println("inserisci il numero di squadre qui:");
+                      String bbbg = s.nextLine();
+                      bbb = Integer.parseInt(bbbg);
+                     
+                      }
+                catch ( NumberFormatException e){
+                      System.out.println("Scrivimi roba decente!");
+                      gg= false;}
+                 }
+              final int x= bbb;
               System.out.println("inserisci il numero di gironi qui:");
               final int g= s.nextInt();
               Gironi[] array = new Gironi[x];
@@ -62,10 +75,10 @@ double numero;
               t++;}
          t=0;}
    System.out.println(" ");
-   System.out.println("inserisci q per chiudere, qualsiasi altro tasto per reinizilizzare il programma:");
+   System.out.println("inserisci q per chiudere, qualsiasi altro tasto per reinizializzare il programma:");
    String j= s.next().substring(0,1);
    if (j.equalsIgnoreCase("q")){
    flag=false;}
    }   
  }  
-}           
+}       
