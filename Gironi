@@ -63,7 +63,7 @@ double numero;
          t=0;}
    System.out.println(" ");
    System.out.println("inserisci q per chiudere, qualsiasi altro tasto per reinizilizzare il programma:");
-   String j= s.next().substring(0,1);
+   String j= s.next();
    if (j.equalsIgnoreCase("q")){
    flag=false;}
    }   
