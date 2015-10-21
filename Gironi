@@ -2,7 +2,7 @@
   @license GNU GPL 2.0 
 */
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
 import java.lang.Math;
 public class Gironi{
 String nome;
@@ -25,14 +25,17 @@ double numero;
               int bbb=0;
               while (gg != false){
                 try  {gg = true;
+                      Scanner base = new Scanner(System.in);
                       System.out.println("inserisci il numero di squadre qui:");
-                      String bbbg = s.nextLine();
-                      bbb = Integer.parseInt(bbbg);
+                      bbb= base.nextInt();
+                      gg= false;
+                      
                      
                       }
-                catch ( NumberFormatException e){
+                catch ( InputMismatchException e){
                       System.out.println("Scrivimi roba decente!");
-                      gg= false;}
+              /*       String cazzata =s.next();*/
+                      /*gg= false;*/}
                  }
               final int x= bbb;
               System.out.println("inserisci il numero di gironi qui:");
@@ -76,7 +79,7 @@ double numero;
          t=0;}
    System.out.println(" ");
    System.out.println("inserisci q per chiudere, qualsiasi altro tasto per reinizializzare il programma:");
-   String j= s.next().substring(0,1);
+   String j= s.next();
    if (j.equalsIgnoreCase("q")){
    flag=false;}
    }   
